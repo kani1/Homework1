@@ -2,9 +2,11 @@ package com.example.homework1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,11 +26,11 @@ public class LoginActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
         login = findViewById(R.id.login);
         parol = findViewById(R.id.password);
-        initClickers();
+        parol.setTransformationMethod(new PasswordTransformationMethod());
         parol.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+btn.setEnabled(true);
             }
 
             @Override
@@ -38,11 +40,25 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
-                checkFields();
-
+                btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if ((login.getText().toString().length() ==0) && (parol.getText().toString().length() ==0)) {
+                            btn.setEnabled(false);
+                        }else {
+                            Toast.makeText(LoginActivity.this,"Welcome",Toast.LENGTH_SHORT).show();
+                            Intent intent= new Intent(LoginActivity.this,Calculator.class);
+                            startActivity(intent);
+                        }
+                    }
+                });
             }
         });
+    }
+}
+
+
+
 
 //
 //        if (login.getText().toString().isEmpty() && parol.getText().toString().isEmpty()) {
@@ -75,31 +91,25 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        };
 //
+
+
+
+//    private void initClickers() {
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Toast toast= Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_SHORT);
-//                toast.show();
-//
+//                checkFields();
+//                Toast.makeText(LoginActivity.this, "Добро пожаловать", Toast.LENGTH_SHORT).show();
+//                Intent intent= new Intent(LoginActivity.this,Calculator.class);
+//                startActivity(intent);
 //            }
-//    });
-    }
+//        });
+//    }
 
-    private void initClickers() {
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkFields();
-                Toast.makeText(LoginActivity.this, "Добро пожаловать!", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void checkFields() {
-        if ((login.getText().toString().length() ==0) && (parol.getText().toString().length() ==0)) {
-            btn.setEnabled(false);
-        } else {
-            btn.setEnabled(true);
-        }
-    }
-}
+//    private void checkFields() {
+//        if ((login.getText().toString().length() ==0) && (parol.getText().toString().length() ==0)) {
+//            btn.setEnabled(false);
+//        } else {
+//            btn.setEnabled(true);
+//        }
+//    }

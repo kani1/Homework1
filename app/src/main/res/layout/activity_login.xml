@@ -12,81 +12,82 @@
         android:id="@+id/вход"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Вход"
+        android:text="@string/вход"
         android:textColor="#111010"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:text="Добро пожаловать!"
+        android:text="@string/welcome"
         android:textColor="#111010"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/вход" />
+        app:layout_constraintBottom_toTopOf ="@id/выполните"
+         />
 
     <TextView
         android:id="@+id/выполните"
-        android:layout_width="258dp"
-        android:layout_height="76dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="      Выполните вход                   или зарегистрируйтесь."
+        android:text="Выполните вход или зарегистрируйтесь."
         android:textColor="#131212"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.679"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome" />
+        app:layout_constraintBottom_toTopOf="@id/login"
+
+        />
 
     <EditText
         android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Введите вашу почту                           "
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:hint="@string/email"
         android:textSize="20sp"
         android:textColor="#660E0D0D"
         android:background="#D0E9EC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/выполните"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
         android:layout_marginTop="24dp"
         android:background="#D0E9EC"
-        android:hint="Введите пароль                                   "
+        android:hint="@string/parol"
         android:textColor="#660E0D0D"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login" />
+        app:layout_constraintTop_toBottomOf="@id/login"
+
+        />
 
     <Button
         android:id="@+id/btn"
-        android:enabled="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:background="#69CAD6"
-        android:text="Войти"
+        android:text="@string/voyti"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password" />
 
@@ -94,7 +95,7 @@
         android:id="@+id/zabyl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Забыл пароль?"
+        android:text="@string/zabylparol"
         android:textColor="#131212"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +107,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="   Нажми сюда"
+        android:text="@string/najmi"
         android:textColor="#0A4747"
         app:layout_constraintStart_toEndOf="@id/zabyl"
         app:layout_constraintTop_toBottomOf="@id/btn" />
